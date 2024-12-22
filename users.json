@@ -1,0 +1,37 @@
+[
+  {
+    "email": "john.doe@example.com",
+    "name": "John Doe",
+    "age": 28,
+    "address": "123 Main Street, New York, NY",
+    "phone": "123-456-7890"
+  },
+  {
+    "email": "jane.smith@example.com",
+    "name": "Jane Smith",
+    "age": 34,
+    "address": "456 Elm Street, Los Angeles, CA",
+    "phone": "987-654-3210"
+  },
+  {
+    "email": "robert.brown@example.com",
+    "name": "Robert Brown",
+    "age": 42,
+    "address": "789 Oak Street, Chicago, IL",
+    "phone": "555-123-4567"
+  },
+  {
+    "email": "emily.jones@example.com",
+    "name": "Emily Jones",
+    "age": 26,
+    "address": "321 Pine Street, Miami, FL",
+    "phone": "444-987-6543"
+  },
+  {
+    "email": "michael.wilson@example.com",
+    "name": "Michael Wilson",
+    "age": 30,
+    "address": "987 Birch Street, Houston, TX",
+    "phone": "333-111-2222"
+  }
+]

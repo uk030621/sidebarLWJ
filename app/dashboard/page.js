@@ -1,3 +1,4 @@
+//app/dashboard/page.js
 "use client";
 
 import { useState } from "react";
@@ -123,7 +124,7 @@ export default function Dashboard() {
           type="email"
           placeholder="Enter user email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value.toLowerCase())}
           className="p-2 border rounded w-full"
         />
         <div className="flex gap-4">

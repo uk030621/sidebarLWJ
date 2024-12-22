@@ -1,3 +1,4 @@
+//app/api/admin/route.js
 import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
@@ -18,11 +19,12 @@ async function connectToDatabase() {
 export async function POST(request) {
   try {
     const { email, name, age, address, phone } = await request.json();
+    const normalizedEmail = email.toLowerCase();
     const db = await connectToDatabase();
     const collection = db.collection(collectionName);
 
     // Ensure email is unique
-    const existingUser = await collection.findOne({ email });
+    const existingUser = await collection.findOne({ email: normalizedEmail });
     if (existingUser) {
       return new Response(JSON.stringify({ error: "Email already exists." }), {
         status: 400,
@@ -30,7 +32,13 @@ export async function POST(request) {
     }
 
     // Insert user into the collection
-    await collection.insertOne({ email, name, age, address, phone });
+    await collection.insertOne({
+      email: normalizedEmail,
+      name,
+      age,
+      address,
+      phone,
+    });
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
     return new Response(JSON.stringify({ error: "Failed to add user." }), {

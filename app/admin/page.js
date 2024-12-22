@@ -1,3 +1,4 @@
+//app/admin/page.js
 "use client";
 
 import { useState } from "react";
@@ -34,6 +35,11 @@ export default function AdminPage() {
     }
   };
 
+  // Helper function to capitalize the first letter of each word
+  const capitalizeWords = (input) => {
+    return input.replace(/\b\w/g, (char) => char.toUpperCase());
+  };
+
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Admin - Add User</h1>
@@ -43,14 +49,14 @@ export default function AdminPage() {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value.toLowerCase())}
           className="p-2 border rounded"
         />
         <input
           type="text"
           placeholder="Name"
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(capitalizeWords(e.target.value))}
           className="p-2 border rounded"
         />
         <input
